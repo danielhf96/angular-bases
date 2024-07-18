@@ -1,5 +1,20 @@
 <h3> Listado </h3>
 <ul class="list-group">
-  <li class="list-group-item"> Krillin - 500 </li>
-  <li class="list-group-item"> Goku - 10,000 </li>
+  <li *ngFor="
+  let personaje of characters;
+  let i = index;
+  let isFirst = first;
+  let isLast = last;
+  let isEven = even;
+  let isOdd = odd;
+  " class="list-group-item">
+    <span class="text-info">{{ i +1 }}.</span>
+    {{ personaje.nombre }} -
+    <span><strong> Poder: </strong> {{ personaje.poder }} </span>
+
+    <span> Es primero: {{ isFirst }}</span><br>
+    <span> Es último: {{ isLast }}</span><br>
+    <span> Es par: {{ isEven }}</span><br>
+    <span> Es inpar: {{ isOdd }}</span><br>
+  </li>
 </ul>
