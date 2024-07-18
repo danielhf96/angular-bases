@@ -22,4 +22,13 @@ export class MainPageComponent {
       poder: 5000
     }
   ];
+
+  onNewCharacter( character: Character): void {
+    this.personajes.push(character);
+  }
+
+  onDeleteCharacter( index: number): void {
+    this.personajes.splice(index, 1);
+  }
+
 }

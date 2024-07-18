@@ -7,14 +7,18 @@
   let isLast = last;
   let isEven = even;
   let isOdd = odd;
-  " class="list-group-item">
-    <span class="text-info">{{ i +1 }}.</span>
-    {{ personaje.nombre }} -
-    <span><strong> Poder: </strong> {{ personaje.poder }} </span>
+  " class="list-group-item d-flex justify-content-between align-items-center"
+  [ngClass]="{
+    'list-group-item-dark': isLast,
+    'list-group-item-primary': isEven
+  }"
+  >
+    <div>
+      <span class="text-info">{{ i +1 }}.</span>
+      {{ personaje.nombre }} -
+      <span><strong> Poder: </strong> {{ personaje.poder }} </span>
+    </div>
 
-    <span> Es primero: {{ isFirst }}</span><br>
-    <span> Es último: {{ isLast }}</span><br>
-    <span> Es par: {{ isEven }}</span><br>
-    <span> Es inpar: {{ isOdd }}</span><br>
+    <button class="btn btn-sm btn-danger" (click)="ondeleteBtn(i)"> X </button>
   </li>
 </ul>
