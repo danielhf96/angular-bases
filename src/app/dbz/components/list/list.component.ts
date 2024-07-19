@@ -10,9 +10,11 @@ import { Character } from '../../interfaces/character.interface';
 export class ListComponent {
 
   @Input() public characters: Character[] = [];
-  @Output() onDelete: EventEmitter<number> = new EventEmitter();
+  @Output() onDelete: EventEmitter<string> = new EventEmitter();
 
-  ondeleteBtn(index: number): void {
+  ondeleteBtn(index?: string): void {
+    if(!index) return;
+
     this.onDelete.emit(index);
   }
 
